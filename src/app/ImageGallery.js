@@ -1,16 +1,25 @@
+
+const images = [
+    "https://i.imgur.com/Mx7dA2Y.jpg",
+    'https://i.imgur.com/OjlNjxJ.jpeg',
+    'https://i.imgur.com/PELcLGW.jpeg'
+];
+
+function Image({imagen}){
+    return <img
+        src = {imagen}
+        height= {300}
+    />
+}
+
 export default function ImageGallery(){
-    const images = [
-        'https://i.imgur.com/r7IuN4i.jpeg',
-        'https://i.imgur.com/OjlNjxJ.jpeg',
-        'https://i.imgur.com/PELcLGW.jpeg'
-    ];
+    
     return<>
-        {images.map((image, index) =>
-            <img
-                key = {index}
-                src = {image}
-                height= {300}
-            ></img>
+        {images.map((img, index) =>
+            <Image
+                key={index}
+                imagen={img}
+            />
         )}
     </>
 }
